@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Compass,
@@ -33,7 +33,7 @@ const CompetenciesSection = ({
       description:
         "Expert in celestial navigation, electronic chart systems, and optimal route planning for all weather conditions.",
       icon: <Navigation className="h-10 w-10" />,
-      color: "from-blue-500 to-teal-400",
+      color: "from-blue-500 to-cyan-400",
     },
     {
       id: 2,
@@ -95,41 +95,80 @@ const CompetenciesSection = ({
   title = "Core Competencies",
   subtitle = "Specialized maritime skills developed over decades of seafaring experience",
 }: CompetenciesSectionProps) => {
+  const [flippedCards, setFlippedCards] = useState<number[]>([]);
+
+  const toggleCardFlip = (id: number) => {
+    setFlippedCards((prev) =>
+      prev.includes(id) ? prev.filter((cardId) => cardId !== id) : [...prev, id]
+    );
+  };
+
+  const isFlipped = (id: number) => flippedCards.includes(id);
+
   return (
-    <section id="competencies" className="py-20 bg-navy-900 text-white">
+    <section id="competencies" className="py-20 bg-slate-900 text-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4 text-gold-500">{title}</h2>
+          <h2 className="text-4xl font-bold mb-4 text-yellow-500">{title}</h2>
           <p className="text-xl text-teal-300 max-w-3xl mx-auto">{subtitle}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {competencies.map((competency) => (
+          {competencies.map((competency, index) => (
             <motion.div
               key={competency.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: competency.id * 0.1 }}
+              transition={{ duration: 0.5, delay: Math.min(0.8, index * 0.1) }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.05, rotateY: 180 }}
-              className="group perspective"
+              className="group cursor-pointer"
+              onClick={() => toggleCardFlip(competency.id)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  toggleCardFlip(competency.id);
+                }
+              }}
+              tabIndex={0}
+              role="button"
+              aria-pressed={isFlipped(competency.id)}
+              aria-label={`${competency.title} - Click to flip card for description`}
             >
-              <div className="relative h-full w-full transition-all duration-500 preserve-3d">
+              <div
+                className="relative w-full min-h-[220px] aspect-[4/3] transition-transform duration-500"
+                style={{
+                  transformStyle: "preserve-3d",
+                  transform: isFlipped(competency.id)
+                    ? "rotateY(180deg)"
+                    : "rotateY(0deg)",
+                }}
+              >
                 {/* Front of Card */}
-                <div className="absolute inset-0 backface-hidden rounded-lg bg-navy-800 p-6 shadow-lg border-2 border-transparent hover:border-gold-500 transition-colors">
+                <div
+                  className="absolute inset-0 rounded-lg bg-slate-800 p-6 shadow-lg border-2 border-transparent hover:border-yellow-500 transition-colors flex flex-col justify-center items-center"
+                  style={{ backfaceVisibility: "hidden" }}
+                >
                   <div
                     className={`mb-4 inline-flex rounded-full p-3 bg-gradient-to-br ${competency.color}`}
                   >
                     {competency.icon}
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-white">
+                  <h3 className="text-xl font-bold text-white text-center">
                     {competency.title}
                   </h3>
                 </div>
 
                 {/* Back of Card */}
-                <div className="absolute inset-0 backface-hidden rounded-lg bg-navy-700 p-6 shadow-lg border-2 border-gold-500 [transform:rotateY(180deg)]">
-                  <p className="text-gray-200">{competency.description}</p>
+                <div
+                  className="absolute inset-0 rounded-lg bg-slate-700 p-6 shadow-lg border-2 border-yellow-500 flex justify-center items-center"
+                  style={{
+                    backfaceVisibility: "hidden",
+                    transform: "rotateY(180deg)",
+                  }}
+                >
+                  <p className="text-gray-200 text-center">
+                    {competency.description}
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -137,21 +176,15 @@ const CompetenciesSection = ({
         </div>
       </div>
 
-      {/* Decorative wave effect at the bottom */}
-      <div className="relative h-16 mt-10 overflow-hidden">
-        <div className="absolute bottom-0 left-0 w-full">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1440 320"
-            className="w-full"
-          >
-            <path
-              fill="#0a192f"
-              fillOpacity="1"
-              d="M0,160L48,144C96,128,192,96,288,106.7C384,117,480,171,576,181.3C672,192,768,160,864,128C960,96,1056,64,1152,74.7C1248,85,1344,139,1392,165.3L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
-            ></path>
-          </svg>
-        </div>
+      {/* Remove wave overlap issue */}
+      <div className="relative h-16 overflow-hidden pointer-events-none">
+        <svg
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          className="absolute inset-0 w-full h-full text-slate-800 fill-current"
+        >
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" />
+        </svg>
       </div>
     </section>
   );
