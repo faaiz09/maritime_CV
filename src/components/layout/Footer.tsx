@@ -12,6 +12,8 @@ import {
   Twitter,
 } from "lucide-react";
 
+import cv from "@/assets/documents/CAPT SARFARAZ AKHTAR CV.pdf";
+
 interface FooterProps {
   className?: string;
 }
@@ -36,11 +38,11 @@ const Footer = ({ className = "" }: FooterProps) => {
             <ul className="space-y-3">
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-teal-400" />
-                <span>+1 (555) 123-4567</span>
+                <span>+91-9819087186</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-teal-400" />
-                <span>captain.sarfaraz@maritime.com</span>
+                <span>captsarfaraz@gmail.com</span>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-teal-400" />
@@ -144,10 +146,14 @@ const Footer = ({ className = "" }: FooterProps) => {
             <div className="pt-4">
               <Button
                 variant="outline"
-                className="border-teal-400 text-white hover:bg-teal-400/20"
+                className="border-teal-400 text-black hover:bg-teal-400/20 hover:text-teal-400"
+                asChild
               >
-                Download CV
+                <a href={cv} download="Capt_Sarfaraz_CV.pdf">
+                  Download CV
+                </a>
               </Button>
+
             </div>
           </div>
         </div>
@@ -155,8 +161,7 @@ const Footer = ({ className = "" }: FooterProps) => {
         <div className="mt-8 pt-6 border-t border-white/20 text-center text-sm">
           <p>© {currentYear} Capt. Sarfaraz Akhtar. All rights reserved.</p>
           <p className="mt-2 text-white/70">
-            Designed with <span className="text-red-500">♥</span> for maritime
-            professionals
+            Designed with <span className="text-red-500">♥</span> for Dad
           </p>
         </div>
       </div>

@@ -22,8 +22,8 @@ const ContactSection = ({
   title = "Get In Touch",
   subtitle = "Reach out for maritime consultations, speaking engagements, or professional inquiries",
   contactInfo = {
-    email: "captain.sarfaraz@maritime.com",
-    phone: "+1 (555) 123-4567",
+    email: "captsarfaraz@gmail.com",
+    phone: "+91-9819087186",
     location: "Available for global maritime assignments",
   },
 }: ContactSectionProps) => {
