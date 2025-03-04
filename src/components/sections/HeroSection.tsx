@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ArrowDown, Anchor } from "lucide-react";
+import dp from "@/assets/img/seafearer.png";
 
 interface HeroSectionProps {
   title?: string;
@@ -14,7 +15,7 @@ const HeroSection = ({
   title = "Capt. Sarfaraz Akhtar",
   subtitle = "30+ Years of Maritime Leadership Excellence",
   backgroundImage = "https://images.unsplash.com/photo-1566902249079-7614cad68d43?w=1200&q=80",
-  profileImage = "https://api.dicebear.com/7.x/avataaars/svg?seed=captain&backgroundColor=b6e3f4",
+  profileImage = dp,
 }: HeroSectionProps) => {
   const [scrollY, setScrollY] = useState(0);
 

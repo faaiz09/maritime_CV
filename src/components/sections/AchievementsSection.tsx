@@ -8,7 +8,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
-import safety from "@/assets/safety_excellence_award.png"
+import safety from "@/assets/img/safety_excellence_award.png"
 
 interface Achievement {
   id: number;
