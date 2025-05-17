@@ -44,7 +44,7 @@ const EducationSection = ({
       institution: "T.S Rajendra College of Nautical Science",
       year: "1990",
       location: "India",
-      description: "Comprehensive education in navigation, ship operations, maritime law, maritime economics, maritime management, and leadership with practical training. Was awarded silver medal for pride in profession",
+      description: "Comprehensive education in navigation, ship operations, maritime law, maritime economics, maritime management, and leadership with practical training. Was awarded silver medal for pride in profession.",
       icon: <GraduationCap className="h-6 w-6" />,
     },
     {
