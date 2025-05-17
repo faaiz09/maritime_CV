@@ -29,65 +29,57 @@ const CompetenciesSection = ({
   competencies = [
     {
       id: 1,
-      title: "Navigation & Route Planning",
-      description:
-        "Expert in celestial navigation, electronic chart systems, and optimal route planning for all weather conditions.",
+      title: "Shipping Operations",
+      description: "Expert in maritime operations, fleet management, LPG terminal leadership, and logistics coordination, especially on gas carriers and specialized vessels.",
       icon: <Navigation className="h-10 w-10" />,
       color: "from-blue-500 to-cyan-400",
     },
     {
       id: 2,
-      title: "Maritime Leadership",
-      description:
-        "Proven ability to lead diverse crews in high-pressure situations with clear communication and decisive action.",
+      title: "General Administration",
+      description: "Strong capabilities in holding review meetings, monitoring project progress, and ensuring timely completion and delivery of projects.",
       icon: <Users className="h-10 w-10" />,
       color: "from-purple-500 to-indigo-400",
     },
     {
       id: 3,
-      title: "Safety Management",
-      description:
-        "Comprehensive knowledge of maritime safety protocols, emergency procedures, and risk assessment methodologies.",
+      title: "Client Relationship Management",
+      description: "Ensure highly productive relationships and partnerships for the benefit of the organization.",
       icon: <Shield className="h-10 w-10" />,
       color: "from-red-500 to-orange-400",
     },
     {
       id: 4,
-      title: "Cargo Operations",
-      description:
-        "Specialized in handling liquid cargo operations, including loading, discharge, and monitoring of gas carriers.",
+      title: "Navigating Operations",
+      description: "Expert in vessel navigation, route planning, and safe passage through international waters.",
       icon: <BarChart className="h-10 w-10" />,
       color: "from-amber-500 to-yellow-400",
     },
     {
       id: 5,
-      title: "Technical Systems",
-      description:
-        "Proficient with vessel propulsion systems, auxiliary machinery, and integrated bridge technologies.",
+      title: "Charter Party Coordination",
+      description: "Skilled in managing charter party agreements and ensuring compliance with contractual obligations.",
       icon: <Wrench className="h-10 w-10" />,
       color: "from-gray-600 to-gray-400",
     },
     {
       id: 6,
-      title: "Maritime Regulations",
-      description:
-        "In-depth knowledge of SOLAS, MARPOL, STCW, and other international maritime conventions and regulations.",
+      title: "Fuel Saving Initiatives",
+      description: "Implement fuel optimization strategies that result in significant cost savings without compromising operational safety or performance.",
       icon: <BookOpen className="h-10 w-10" />,
       color: "from-green-500 to-emerald-400",
     },
     {
       id: 7,
-      title: "Vessel Maneuvering",
-      description:
-        "Expert in handling large vessels in challenging conditions, including port approaches and confined waters.",
+      title: "Operations Management",
+      description: "Set goals, monitor work, and evaluate results to ensure departmental and organizational objectives are met.",
       icon: <Compass className="h-10 w-10" />,
       color: "from-cyan-500 to-blue-400",
     },
     {
       id: 8,
-      title: "Crisis Management",
-      description:
-        "Experienced in emergency response, including firefighting, collision avoidance, and evacuation procedures.",
+      title: "Team Building & Leadership",
+      description: "Adept at building and maintaining high-performance multinational teams, cultivating a safety-first culture.",
       icon: <Anchor className="h-10 w-10" />,
       color: "from-rose-500 to-pink-400",
     },

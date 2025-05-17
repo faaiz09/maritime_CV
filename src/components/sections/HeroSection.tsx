@@ -13,7 +13,7 @@ interface HeroSectionProps {
 
 const HeroSection = ({
   title = "Capt. Sarfaraz Akhtar",
-  subtitle = "30+ Years of Maritime Leadership Excellence",
+  subtitle = "VLGC & Tanker Operations | Fleet Management Systems | Compliance Management | Team Leadership & Safety Culture | Audits & Inspections",
   backgroundImage = "https://images.unsplash.com/photo-1566902249079-7614cad68d43?w=1200&q=80",
   profileImage = dp,
 }: HeroSectionProps) => {

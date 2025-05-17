@@ -1,11 +1,6 @@
 import React from "react";
-import { Anchor, Ship, Award, Calendar } from "lucide-react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Ship } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface ExperienceItem {
   id: string;
@@ -27,63 +22,27 @@ const ExperienceSection = ({
   experiences = [
     {
       id: "exp1",
-      title: "Chief Officer",
-      company: "Maritime Shipping Co.",
-      period: "2015 - Present",
-      location: "International Waters",
+      title: "Master Mariner",
+      company: "Anglo-Eastern Ship Management",
+      period: "January 2003 - Present",
+      location: "Gas Carrier (LPG) Operations",
       description: [
-        "Led a crew of 25 officers and ratings on VLGC vessels",
-        "Managed cargo operations for liquefied petroleum gas transport",
-        "Implemented safety protocols resulting in zero incidents for 5 consecutive years",
-        "Navigated through challenging international waters and weather conditions",
+        "Led the operation of Very Large Gas Carriers (VLGCs) for renowned global owners and charterers, including Petredec, Shell, Equinor, Yo Yo Line, NYK, and Kumiai Navigation",
+        "Spearheaded new vessel deliveries, overseeing coordination between shipyards, owners, and classification societies",
+        "Responsible for cargo stowage, ship's accounts, and crew wages management",
+        "Accountable for all vessel certification and documentation",
+        "Established communication with shore authorities on commercial and operational matters",
+        "Ensured safe operation of the vessel and monitored crew compliance with company and legal guidelines",
+        "Maintained all on-board equipment, including machinery, engines, and safety equipment",
+        "Administered daily vessel progress, monitored speed, engine pressure, and water depths",
+        "Adhered to budgets and managed fuel, supplies, and equipment procurement",
+        "Implemented fuel-saving initiatives resulting in significant cost savings",
       ],
       icon: <Ship className="h-5 w-5" />,
-    },
-    {
-      id: "exp2",
-      title: "First Officer",
-      company: "Ocean Transport Ltd.",
-      period: "2010 - 2015",
-      location: "Asia-Pacific Routes",
-      description: [
-        "Served as second-in-command on large commercial vessels",
-        "Coordinated navigation and cargo operations across Asia-Pacific routes",
-        "Supervised deck crew operations and maintenance activities",
-        "Maintained detailed logs and documentation for regulatory compliance",
-      ],
-      icon: <Anchor className="h-5 w-5" />,
-    },
-    {
-      id: "exp3",
-      title: "Second Officer",
-      company: "Global Maritime Services",
-      period: "2005 - 2010",
-      location: "Middle East and European Routes",
-      description: [
-        "Responsible for navigational watch duties on international voyages",
-        "Maintained and updated all navigational charts and publications",
-        "Assisted in planning voyage routes and fuel consumption optimization",
-        "Participated in emergency response drills and safety training programs",
-      ],
-      icon: <Calendar className="h-5 w-5" />,
-    },
-    {
-      id: "exp4",
-      title: "Third Officer",
-      company: "International Shipping Inc.",
-      period: "2000 - 2005",
-      location: "Global Routes",
-      description: [
-        "Performed navigational watch duties under supervision of senior officers",
-        "Maintained safety equipment and conducted regular inspections",
-        "Assisted in cargo loading and discharge operations",
-        "Participated in crew training and development programs",
-      ],
-      icon: <Award className="h-5 w-5" />,
-    },
+    }
   ],
   title = "Professional Experience",
-  subtitle = "Over 30 years of maritime leadership experience across global shipping routes",
+  subtitle = "Results-oriented and Strategic Maritime Operations Leader with well-rounded ownership and decision-making skills; over 30 years of experience in the global shipping industry. Currently pursuing an MBA at IIM Mumbai, enhancing strategic and commercial acumen in maritime logistics and supply chain management",
 }: ExperienceSectionProps) => {
   return (
     <section id="experience" className="py-20 bg-navy-900 text-white">
@@ -93,44 +52,45 @@ const ExperienceSection = ({
           <p className="text-xl text-teal-300 max-w-3xl mx-auto">{subtitle}</p>
         </div>
 
-        <div className="max-w-4xl mx-auto bg-navy-800 rounded-lg p-6 shadow-lg">
-          <Accordion type="single" collapsible className="w-full">
-            {experiences.map((experience) => (
-              <AccordionItem
-                key={experience.id}
-                value={experience.id}
-                className="border-b border-navy-700"
-              >
-                <AccordionTrigger className="hover:bg-navy-700 px-4 rounded-md hover:no-underline">
-                  <div className="flex items-center">
-                    <div className="bg-teal-700 p-2 rounded-full mr-4">
-                      {experience.icon}
-                    </div>
-                    <div className="text-left">
-                      <h3 className="text-xl font-semibold text-gold">
-                        {experience.title}
-                      </h3>
-                      <p className="text-sm text-gray-300">
-                        {experience.company} | {experience.period}
-                      </p>
-                    </div>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-4">
-                  <div className="pl-14">
-                    <p className="text-teal-300 mb-2">{experience.location}</p>
-                    <ul className="list-disc pl-5 space-y-2">
-                      {experience.description.map((item, index) => (
-                        <li key={index} className="text-gray-300">
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="bg-navy-800 rounded-lg p-8 shadow-lg border-l-4 border-gold-500"
+          >
+            <div className="flex items-center mb-6">
+              <div className="bg-teal-700 p-3 rounded-full mr-4">
+                {experiences[0].icon}
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-gold">
+                  {experiences[0].title}
+                </h3>
+                <p className="text-lg text-teal-300">
+                  {experiences[0].company} | {experiences[0].period}
+                </p>
+                <p className="text-gray-300">{experiences[0].location}</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {experiences[0].description.map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex items-start"
+                >
+                  <div className="h-2 w-2 rounded-full bg-teal-400 mt-2 mr-3"></div>
+                  <p className="text-gray-300">{item}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </div>
 

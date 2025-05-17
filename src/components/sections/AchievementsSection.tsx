@@ -29,46 +29,39 @@ const AchievementsSection = ({
   achievements = [
     {
       id: 1,
-      title: "Master Mariner License",
-      description:
-        "Achieved the highest level of maritime certification after years of dedicated service and study.",
-      year: "2005",
+      title: "Service Excellence Award",
+      description: "Honoured with the 2021 Service Excellence Award from Anglo Eastern Ship Management Ltd for exceptional contributions and recognized as one of the organization's top-performing employees.",
+      year: "2021",
       icon: <Trophy className="h-8 w-8 text-yellow-500" />,
-      image:
-        "https://images.unsplash.com/photo-1516216628859-9bccecab13ca?w=800&q=80",
+      image: safety,
     },
     {
       id: 2,
-      title: "Safety Excellence Award",
-      description:
-        "Recognized for maintaining exceptional safety standards across multiple voyages.",
-      year: "2012",
+      title: "Terminal Performance Milestone",
+      description: "Achieved milestone terminal performance, with 100,000 tons of LPG cargo handled in one week and 100,000 safe man-hours without incidents.",
+      year: "2020",
       icon: <Award className="h-8 w-8 text-yellow-500" />,
-      image:safety,
+      image: "https://images.unsplash.com/photo-1516216628859-9bccecab13ca?w=800&q=80",
     },
     {
       id: 3,
-      title: "Leadership Recognition",
-      description:
-        "Honored for outstanding leadership during critical maritime operations.",
-      year: "2018",
+      title: "Master Mariner Certification",
+      description: "Achieved Master Mariner F.G. certification from Director General of Shipping, demonstrating the highest level of maritime expertise.",
+      year: "2010",
       icon: <Star className="h-8 w-8 text-yellow-500" />,
-      image:
-        "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=800&q=80",
+      image: "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=800&q=80",
     },
     {
       id: 4,
-      title: "Environmental Stewardship",
-      description:
-        "Awarded for implementing eco-friendly practices in maritime operations.",
-      year: "2020",
+      title: "Fuel Optimization Success",
+      description: "Successfully implemented fuel optimization strategies that resulted in significant cost savings without compromising operational safety or performance.",
+      year: "2019",
       icon: <Medal className="h-8 w-8 text-yellow-500" />,
-      image:
-        "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&q=80",
+      image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&q=80",
     },
   ],
-  title = "Achievements & Recognition",
-  subtitle = "Celebrating excellence in maritime leadership",
+  title = "Notable Accomplishments",
+  subtitle = "Celebrating excellence in maritime leadership and operational achievements",
 }: AchievementsSectionProps) => {
   const [api, setApi] = useState<any>(null);
   const [current, setCurrent] = useState(0);

@@ -23,8 +23,8 @@ const ContactSection = ({
   subtitle = "Reach out for maritime consultations, speaking engagements, or professional inquiries",
   contactInfo = {
     email: "captsarfaraz@gmail.com",
-    phone: "+91-9819087186",
-    location: "Available for global maritime assignments",
+    phone: "+91 9819087186",
+    location: "Kharghar, Navi Mumbai, Maharashtra",
   },
 }: ContactSectionProps) => {
   return (
