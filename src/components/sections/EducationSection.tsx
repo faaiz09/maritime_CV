@@ -33,7 +33,7 @@ const EducationSection = ({
       id: 2,
       degree: "Master Mariner F.G.",
       institution: "Director General of Shipping",
-      year: "2010",
+      year: "1997",
       location: "India",
       description: "Achieved the highest level of maritime certification, demonstrating comprehensive expertise in maritime operations and leadership.",
       icon: <GraduationCap className="h-6 w-6" />,
@@ -44,7 +44,7 @@ const EducationSection = ({
       institution: "T.S Rajendra College of Nautical Science",
       year: "1990",
       location: "India",
-      description: "Comprehensive education in navigation, ship operations, maritime law, and leadership with practical training.",
+      description: "Comprehensive education in navigation, ship operations, maritime law, maritime economics, maritime management, and leadership with practical training. Was awarded silver medal for pride in profession",
       icon: <GraduationCap className="h-6 w-6" />,
     },
     {
